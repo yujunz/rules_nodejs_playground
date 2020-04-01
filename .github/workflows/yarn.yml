@@ -13,13 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Bazel
-      uses: abhinavsingh/setup-bazel@v3
-      with:
-        version: 2.2.0
+    - uses: actions/setup-node@v1
 
-    - name: Build
-      run: |
-        bazel build //...
+    - run: yarn install
       env:
         NPM_FA_TOKEN: ${{ secrets.NPM_FA_TOKEN }}
