@@ -3,7 +3,7 @@ load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
 nodejs_binary(
     name = "history-server",
     data = [
-        "@npm//@fontawesome/fontawesome-pro",
+        "@npm//@fortawesome/fontawesome-pro",
         "@npm//history-server",
     ],
     entry_point = "@npm//:node_modules/history-server/modules/cli.js",
