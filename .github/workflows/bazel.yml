@@ -12,14 +12,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Setup Bazel
-      uses: abhinavsingh/setup-bazel@v3
+    - uses: abhinavsingh/setup-bazel@v3
       with:
         version: 2.2.0
-
-    - name: Build
-      run: |
-        bazel build //...
+    - run: bazel build //...
       env:
         NPM_FA_TOKEN: ${{ secrets.NPM_FA_TOKEN }}

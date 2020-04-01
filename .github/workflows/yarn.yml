@@ -1,4 +1,4 @@
-name: bazel
+name: yarn
 
 on:
   push:
@@ -12,9 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
     - uses: actions/setup-node@v1
-
     - run: yarn install
       env:
         NPM_FA_TOKEN: ${{ secrets.NPM_FA_TOKEN }}
