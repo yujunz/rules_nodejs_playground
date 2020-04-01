@@ -15,6 +15,9 @@ jobs:
     - uses: abhinavsingh/setup-bazel@v3
       with:
         version: 2.2.0
+    - run: bazel query @npm//...
+      env:
+        NPM_FA_TOKEN: ${{ secrets.NPM_FA_TOKEN }}
     - run: bazel build //...
       env:
         NPM_FA_TOKEN: ${{ secrets.NPM_FA_TOKEN }}

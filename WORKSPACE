@@ -13,6 +13,16 @@ http_archive(
 
 load("@build_bazel_rules_nodejs//:index.bzl", "yarn_install")
 
+node_repositories(
+    yarn_repositories = {
+        "1.22.4": ("yarn-v1.22.4.tar.gz", "yarn-v1.22.4", "bc5316aa110b2f564a71a3d6e235be55b98714660870c5b6b2d2d3f12587fb58"),
+    },
+    yarn_urls = [
+        "https://github.com/yarnpkg/yarn/releases/download/v{version}/{filename}",
+    ],
+    yarn_version = "1.22.4",
+)
+
 yarn_install(
     name = "npm",
     package_json = "//:package.json",
